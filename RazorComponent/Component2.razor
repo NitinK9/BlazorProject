@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+
+<h3>Component2</h3>
+
+<label>Store Number(1-5):</label>
+
+
+<input type="number" id="form" name="formInput"
+       min="1" max="5" @bind="formVal">
+
+<h3>number selected :  @valueSel</h3>
+
+<h3>This is the message :  @message</h3>
+
+<div id="welcomeDiv" style="display:none;" class="randon-div"> Thank you for your vote!</div>
+
+
+<button class="btn-primary" @onclick="func">Click me</button>
+
+
+@code {
+    private String message;
+
+    private String valueSel = "";
+
+    private int formVal;
+
+    private int num = 0;
+
+    bool btnClicked = false;
+
+
+
+    private void func()
+    {
+        btnClicked = true;
+
+        valueSel = formVal.ToString();
+
+        if (btnClicked)
+        {
+            message = "thanks for voting";
+        }
+        else
+        {
+
+        }
+    }
+
+
+
+
+}
